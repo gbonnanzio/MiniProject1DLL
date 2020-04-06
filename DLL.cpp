@@ -73,6 +73,25 @@ DLL::DLL(int x){  // constructor, initializes a list with one new node with data
 /* write insertAt, removeAtK  here */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+void insertAt(int x){
+	int count = 0;
+	DLL *tmp = first;
+}
+
+
 /****************************************************************************************/
 /* Part 3                                                                                                                       */
 /****************************************************************************************/
