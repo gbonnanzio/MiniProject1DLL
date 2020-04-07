@@ -95,7 +95,6 @@ int DLL::pop(){
 	return x;
 }
 
-
 void DLL::addAtFront(int x){
 	first = new DNode(x);
 	last = first;
