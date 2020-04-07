@@ -41,20 +41,20 @@ Coder::Coder() {
 	codelist.printCode();
 
 /************/
-<<<<<<< HEAD
+
 	cout << endl<<"PART 1 Secret Code: " << endl;
 //	int arra[1] = {26};
 //	int arrb[10] = {30,35,27,44,32,27,26,39,57,8};
 //	int arrc[23] = {8, 26, 29, 27, 40, 57, 46, 26, 30, 41, 26, 46, 34, 27, 46, 26, 3, 27,48,31,12,17,2};
 //	makeList(arra,1);
 //	cout << "got here" << endl;
-=======
+
 //	cout << endl<<"PART 1 Secret Code: " << endl;
 //	int arra[1] = {26};
 //	int arrb[10] = {30,35,27,44,32,27,26,39,57,8};
 //	int arrc[23] = {8, 26, 29, 27, 40, 57, 46, 26, 30, 41, 26, 46, 34, 27, 46, 26, 3, 27,48,31,12,17,2};
 //	makeList(arra,1);
->>>>>>> branch 'master' of https://github.com/gbonnanzio/MiniProject1DLL
+
 //	for (int i = 0; i < 10; i++) {
 //		codelist.push(arrc[i]);
 //		codelist.addAtFront(arrb[i]);
