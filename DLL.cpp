@@ -28,7 +28,7 @@
 //For this part, you will get the method removeX to work.  removeX removes the value x from the linked list, and uses call by pointer to change the index parameter to be the index (count) of where x occurred in the list.  So, for instance if you had:
 //7<->8<->3<->5<->2<->6<->1
 //And you called: removeX(3,&ind)
-//When  you leave the method, you’d have
+//When  you leave the method, you'd have
 //7<->8<->5<->2<->6<->1
 //And ind would hold 2
 //
@@ -95,15 +95,15 @@ void DLL::addFirst(int x){
 }
 
 void DLL::addAtFront(int x){
-
+	DNode *tmp = new DNode(x);
+	first->prev = tmp;
+	tmp->next = first;
+	first = tmp;
+	size++;
 }
 
 
 
-
-
-
-//aahhhhhhpple
 
 
 
@@ -199,13 +199,69 @@ void DLL::reverse(){
 /****************************************************************************************/
 /* write removeX here */
 	
+void DLL:: removeX(int x, int *ind){
+	DNode *tmp = first;
+	int count = 0;
+	for(int i = 0; i<size;i++){
+		if(tmp->data == x){
+			DNode *tmp2  = tmp->prev;
+			DNode *tmp3 = tmp->next;
+			tmp2->next = tmp3;
+			tmp3->prev = tmp2;
+			delete tmp;
+			*ind = count;
+			return;
+		}
+		tmp = tmp->next;
+		count++;
+	}
+}
+
+
+
+
+
 	
 /****************************************************************************************/
 /* Part 5                                                                                                                     */
 /****************************************************************************************/
 /* write skip here */
 
-
+void DLL::skip(bool flag, int ct, DNode *tmp){
+	if(flag == true){
+			if(ct%2 == 0){
+				DNode *tmp2  = tmp->prev;
+				DNode *tmp3 = tmp->next;
+				tmp2->next = tmp3;
+				tmp3->prev = tmp2;
+				delete tmp;
+				ct++;
+				skip(true,ct,tmp);
+			}
+			else{
+				ct++;
+				skip(true,ct,tmp);
+			}
+	}
+	if(flag == false){
+				if(ct%2 == 1){
+					DNode *tmp2  = tmp->prev;
+					DNode *tmp3 = tmp->next;
+					tmp2->next = tmp3;
+					tmp3->prev = tmp2;
+					delete tmp;
+					ct++;
+					skip(false,ct,tmp);
+				}
+				else{
+					ct++;
+					skip(false,ct,tmp);
+				}
+	}
+	if(tmp == NULL){
+		return;
+	}
+}
 
 
 /***************************************************************************************************/
