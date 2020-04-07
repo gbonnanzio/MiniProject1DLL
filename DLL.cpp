@@ -103,18 +103,15 @@ void DLL::addFirst(int x){
 }
 
 void DLL::addAtFront(int x){
-	DNode *tmp = new DNode(x);
-	first->prev = tmp;
-	tmp->next = first;
-	tmp->prev = NULL;
-	first = tmp;
-	size++;
+
 }
 
 
 
 
 
+
+//aahhhhhhpple
 
 
 
@@ -185,6 +182,27 @@ int DLL::removeAtK(int ind){
 /* Part 3                                                                                                                       */
 /****************************************************************************************/
 /* write reverse here */
+
+void DLL::reverse(){
+	DNode *tmp = first;
+	//tmp2 will always be the original one after tmp
+	DNode *tmp2 = first->next;
+	while(tmp->next != NULL){
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /****************************************************************************************/
 /* Part 4                                                                                                                       */
