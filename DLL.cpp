@@ -147,23 +147,28 @@ void DLL::insertAt(int ind,int x){
 	int currIndx = 0;
 	//tmp will be the node before where we are inserting
 	DNode *tmp = first;
-	while(currIndx < ind-1){
-		tmp = tmp->next;
-		currIndx++;
+	if(ind == 0){
+		addAtFront(x);
 	}
-	//tmp2 is the node after the insert
-	DNode *tmp2 = tmp->next;
-	if(tmp2 == NULL){
-		push(x);
-	}
-	//node to insert
 	else{
-		DNode *newNode = new DNode(x); //new node
-		tmp->next = newNode;
-		newNode->next = tmp2;
-		newNode->prev = tmp;
-		tmp2->prev = newNode;
-		size++;
+		while(currIndx < ind-1){
+			tmp = tmp->next;
+			currIndx++;
+		}
+		//tmp2 is the node after the insert
+		DNode *tmp2 = tmp->next;
+		if(tmp2 == NULL){
+			push(x);
+		}
+		//node to insert
+		else{
+			DNode *newNode = new DNode(x); //new node
+			tmp->next = newNode;
+			newNode->next = tmp2;
+			newNode->prev = tmp;
+			tmp2->prev = newNode;
+			size++;
+		}
 	}
 }
 
