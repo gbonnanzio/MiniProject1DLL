@@ -95,12 +95,14 @@ int DLL::pop(){
 	return x;
 }
 
-void DLL::addAtFront(int x){
+void DLL::addFirst(int x){
 	first = new DNode(x);
 	last = first;
 	first->prev = NULL;
 	size++;
 }
+
+
 
 
 
