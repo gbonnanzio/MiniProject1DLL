@@ -85,6 +85,14 @@ void DLL::push(int x){
 }
 
 int DLL::pop(){
+	if(size == 1){
+		int x = first->data;
+		first = NULL;
+		last = NULL;
+		size--;
+		return x;
+	}
+
 
 	DNode *temp = last;
 	int x = temp->data;
