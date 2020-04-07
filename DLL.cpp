@@ -78,8 +78,9 @@ void DLL::push(int x){
 	else{
 		DNode *tmp = new DNode(x);
 		last -> next = tmp;
+		tmp -> prev = last;
+		tmp -> next = NULL;
 		last = tmp;
-		tmp -> prev = first;
 		size++;
 	}
 
