@@ -170,6 +170,7 @@ int DLL::removeAtK(int ind){
 			first = NULL;
 			last = NULL;
 			delete tmp;
+			size--;
 			return deletedData;
 		}
 		DNode *tmp2 = first->next;
