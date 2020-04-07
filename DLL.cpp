@@ -69,11 +69,19 @@ DLL::DLL(int x){  // constructor, initializes a list with one new node with data
 
 
 void DLL::push(int x){
-	DNode *tmp = new DNode(x);
-	last -> next = tmp;
-	tmp->prev = last;
-	last = tmp;
-	size++;
+	if(first == NULL){
+		DNode *tmp = new DNode(x);
+		first = tmp;
+		last = first;
+		size++;
+	}
+	else{
+		DNode *tmp = new DNode(x);
+		last -> next = tmp;
+		tmp->prev = last;
+		last = tmp;
+		size++;
+	}
 }
 
 int DLL::pop(){
@@ -137,33 +145,53 @@ void DLL::insertAt(int ind,int x){
 	}
 	//tmp2 is the node after the insert
 	DNode *tmp2 = tmp->next;
+	if(tmp2 == NULL){
+		push(x);
+	}
 	//node to insert
-	DNode *newNode = new DNode(x); //new node
-	tmp->next = newNode;
-	newNode->next = tmp2;
-	newNode->prev = tmp;
-	tmp2->prev = newNode;
-	size++;
+	else{
+		DNode *newNode = new DNode(x); //new node
+		tmp->next = newNode;
+		newNode->next = tmp2;
+		newNode->prev = tmp;
+		tmp2->prev = newNode;
+		size++;
+	}
 }
 
 int DLL::removeAtK(int ind){
 	int currIndx = 0;
+	int deletedData;
 	//tmp will be the node before where we are inserting
 	DNode *tmp = first;
-	while(currIndx < ind-1){
+	if(ind == 0){
+		DNode *tmp2 = first->next;
+		deletedData = first->data;
+		delete first;
+		first = tmp2;
+		first->prev = NULL;
+
+	}
+	else if(ind == size - 2){
+		cout << "test 6" << endl;
+		deletedData = pop();
+		return deletedData;
+	}
+	else{
+		while(currIndx < ind-1){
 		tmp = tmp->next;
 		currIndx++;
+		}
+		//tmp2 is the node to be removed
+		DNode *tmp2 = tmp->next;
+		deletedData = tmp2->data;
+		//tmp3 is the node after the one removed
+		DNode *tmp3 = tmp2->next;
+		tmp->next = tmp3;
+		tmp3->prev = tmp;
+		delete tmp2;
+		size--;
 	}
-	//tmp2 is the node to be removed
-	DNode *tmp2 = tmp->next;
-	int deletedData = tmp2->data;
-	//tmp3 is the node after the one removed
-	DNode *tmp3 = tmp2->next;
-	tmp->next = tmp3;
-	tmp3->prev = tmp;
-	delete tmp2;
-	size--;
-
 	return deletedData;
 }
 

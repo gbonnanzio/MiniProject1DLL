@@ -97,26 +97,26 @@ Coder::Coder() {
 	codelist.printList();
 	codelist.removeAtK(0);
 	codelist.printList();
-//	/******************************/
-//	cout <<endl<< "PART 2 Secret Code: " << endl;
-////	int arrd[19] = {20, 45, 31, 26, 46, 34, 31, 26, 32, 41, 44, 29, 31, 53, 26, 11, 47, 37, 31};
-////	codelist.addFirst(32);
-////	for (int i = 0; i < 10; i++) {
-////		codelist.push(i);
-////	}
-////	for (int i = 1; i < 11; i++) {
-////		codelist.insertAt(i*2,arrd[i]);
-////	}
-////	for (int i = 11; i< 19; i++) {
-////		codelist.push(arrd[i]);
-////	}
-////	codelist.removeAtK(0);
-////	codelist.insertAt(0,20);
-////	for (int i = 19; i >= 1; i-=2) {
-////		codelist.removeAtK(i);
-////	}
-////	codelist.printCode();
-//	cout << "*****************************************************************" << endl;
+	/******************************/
+	cout <<endl<< "PART 2 Secret Code: " << endl;
+//	int arrd[19] = {20, 45, 31, 26, 46, 34, 31, 26, 32, 41, 44, 29, 31, 53, 26, 11, 47, 37, 31};
+//	codelist.addFirst(32);
+//	for (int i = 0; i < 10; i++) {
+//		codelist.push(i);
+//	}
+//	for (int i = 1; i < 11; i++) {
+//		codelist.insertAt(i*2,arrd[i]);
+//	}
+//	for (int i = 11; i< 19; i++) {
+//		codelist.push(arrd[i]);
+//	}
+//	codelist.removeAtK(0);
+//	codelist.insertAt(0,20);
+//	for (int i = 19; i >= 1; i-=2) {
+//		codelist.removeAtK(i);
+//	}
+//	codelist.printCode();
+	cout << "*****************************************************************" << endl;
 //	cout << "Part 3: "<<endl;
 //	//		Part 3: For this part, you will get the method reverse working for the DLL doubly linked list class.
 //	//		This method reverses the list.  Note: it doesn't just print out the list in reverse order, it actually
