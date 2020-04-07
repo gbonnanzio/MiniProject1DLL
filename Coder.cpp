@@ -42,24 +42,25 @@ Coder::Coder() {
 
 /************/
 	cout << endl<<"PART 1 Secret Code: " << endl;
-	int arra[1] = {26};
-	int arrb[10] = {30,35,27,44,32,27,26,39,57,8};
-	int arrc[23] = {8, 26, 29, 27, 40, 57, 46, 26, 30, 41, 26, 46, 34, 27, 46, 26, 3, 27,48,31,12,17,2};
-	makeList(arra,1);
-	for (int i = 0; i < 10; i++) {
-		codelist.push(arrc[i]);
-		codelist.addAtFront(arrb[i]);
-	}
-	for (int i = 0; i < 13; i++) {
-		codelist.push(arrc[i+10]);
-	}
-	for (int i=0; i < 3; i++) {
-		codelist.pop();
-	}
-	codelist.printCode();
-	codelist.printList();
-	int darr[0];
-	makeList(darr,0);
+//	int arra[1] = {26};
+//	int arrb[10] = {30,35,27,44,32,27,26,39,57,8};
+//	int arrc[23] = {8, 26, 29, 27, 40, 57, 46, 26, 30, 41, 26, 46, 34, 27, 46, 26, 3, 27,48,31,12,17,2};
+//	makeList(arra,1);
+//	cout << "got here" << endl;
+//	for (int i = 0; i < 10; i++) {
+//		codelist.push(arrc[i]);
+//		codelist.addAtFront(arrb[i]);
+//	}
+//	for (int i = 0; i < 13; i++) {
+//		codelist.push(arrc[i+10]);
+//	}
+//	for (int i=0; i < 3; i++) {
+//		codelist.pop();
+//	}
+//	codelist.printCode();
+//	codelist.printList();
+//	int darr[0];
+//	makeList(darr,0);
 	cout <<"***************************************************************************" << endl;
 //	cout << "Part 2: "<<endl;
 //////		Part 2: Get  the DLL.cpp methods insertAt and removeAtK methods working for a doubly linked list.
