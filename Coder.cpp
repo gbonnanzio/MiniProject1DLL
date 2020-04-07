@@ -24,29 +24,37 @@ Coder::Coder() {
 	codelist.printCode();
 
 /*********************/
-//	cout << "Part 1 Testing:" << endl;
-//	int arr2[29]={26, 27, 26, 41, 46, 40, 35, 26, 33, 40, 35, 40, 44, 47, 46, 26, 31, 44, 57, 47, 41, 51, 26, 53, 30, 44, 41, 5, 59};
-//	int arr3[10] = {54,26,18,46,41,42,26,35,46,55};
-//	int i = 0;
-//	for (; i < 10; i++) {
-//		codelist.push(arr3[i]);
-//		codelist.printList();
-//		codelist.addAtFront(arr2[i]);
-//		codelist.printList();
-//	}
-//	for (;i<29;i++) {
-//		codelist.addAtFront(arr2[i]);
-//	}
-//	codelist.printList();
-//	codelist.printCode();
+	cout << "Part 1 Testing:" << endl;
+	int arr2[29]={26, 27, 26, 41, 46, 40, 35, 26, 33, 40, 35, 40, 44, 47, 46, 26, 31, 44, 57, 47, 41, 51, 26, 53, 30, 44, 41, 5, 59};
+	int arr3[10] = {54,26,18,46,41,42,26,35,46,55};
+	int i = 0;
+	for (; i < 10; i++) {
+		codelist.push(arr3[i]);
+		codelist.printList();
+		codelist.addAtFront(arr2[i]);
+		codelist.printList();
+	}
+	for (;i<29;i++) {
+		codelist.addAtFront(arr2[i]);
+	}
+	codelist.printList();
+	codelist.printCode();
 
 /************/
+<<<<<<< HEAD
 	cout << endl<<"PART 1 Secret Code: " << endl;
 //	int arra[1] = {26};
 //	int arrb[10] = {30,35,27,44,32,27,26,39,57,8};
 //	int arrc[23] = {8, 26, 29, 27, 40, 57, 46, 26, 30, 41, 26, 46, 34, 27, 46, 26, 3, 27,48,31,12,17,2};
 //	makeList(arra,1);
 //	cout << "got here" << endl;
+=======
+//	cout << endl<<"PART 1 Secret Code: " << endl;
+//	int arra[1] = {26};
+//	int arrb[10] = {30,35,27,44,32,27,26,39,57,8};
+//	int arrc[23] = {8, 26, 29, 27, 40, 57, 46, 26, 30, 41, 26, 46, 34, 27, 46, 26, 3, 27,48,31,12,17,2};
+//	makeList(arra,1);
+>>>>>>> branch 'master' of https://github.com/gbonnanzio/MiniProject1DLL
 //	for (int i = 0; i < 10; i++) {
 //		codelist.push(arrc[i]);
 //		codelist.addAtFront(arrb[i]);
@@ -62,35 +70,38 @@ Coder::Coder() {
 //	int darr[0];
 //	makeList(darr,0);
 	cout <<"***************************************************************************" << endl;
-//	cout << "Part 2: "<<endl;
+
+	cout << "Part 2: "<<endl;
 //////		Part 2: Get  the DLL.cpp methods insertAt and removeAtK methods working for a doubly linked list.
 //////		I've given you the test cases and the output.  When you get them working, you should be able to run
 //////		this and decode the second secret code
-//	cout << "Part 2 Testing:" << endl;
-//	codelist.addFirst(0);
-//	codelist.printList();
-//	codelist.insertAt(1,1);
-//	codelist.printList();
-//	codelist.insertAt(2,3);
-//	codelist.printList();
-//	codelist.insertAt(2,2);
-//	codelist.printList();
-//	codelist.push(4);
-//	codelist.printList();
-//	codelist.insertAt(2,42);
-//	codelist.printList();
-//	codelist.removeAtK(2);
-//	codelist.printList();
-//	codelist.removeAtK(0);
-//	codelist.printList();
-//	codelist.removeAtK(3);
-//	codelist.printList();
-//	codelist.removeAtK(0);
-//	codelist.printList();
-//	codelist.removeAtK(1);
-//	codelist.printList();
-//	codelist.removeAtK(0);
-//	codelist.printList();
+	cout << "Part 2 Testing:" << endl;
+	codelist.addFirst(0);
+	cout<<"test 1"<<endl;
+	codelist.printList();
+	cout<<"test 2"<<endl;
+	codelist.insertAt(1,1);
+	codelist.printList();
+	codelist.insertAt(2,3);
+	codelist.printList();
+	codelist.insertAt(2,2);
+	codelist.printList();
+	codelist.push(4);
+	codelist.printList();
+	codelist.insertAt(2,42);
+	codelist.printList();
+	codelist.removeAtK(2);
+	codelist.printList();
+	codelist.removeAtK(0);
+	codelist.printList();
+	codelist.removeAtK(3);
+	codelist.printList();
+	codelist.removeAtK(0);
+	codelist.printList();
+	codelist.removeAtK(1);
+	codelist.printList();
+	codelist.removeAtK(0);
+	codelist.printList();
 //	/******************************/
 //	cout <<endl<< "PART 2 Secret Code: " << endl;
 ////	int arrd[19] = {20, 45, 31, 26, 46, 34, 31, 26, 32, 41, 44, 29, 31, 53, 26, 11, 47, 37, 31};
