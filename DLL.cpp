@@ -82,7 +82,7 @@ void DLL::push(int x){
 		tmp -> prev = first;
 		size++;
 	}
-
+//
 }
 
 int DLL::pop(){
