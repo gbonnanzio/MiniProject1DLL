@@ -86,9 +86,17 @@ DLL::DLL(int x){  // constructor, initializes a list with one new node with data
 
 
 
-void insertAt(int x){
-	int count = 0;
-	DLL *tmp = first;
+void DLL::insertAt(int ind,int x){
+	int currIndx = 0;
+	DNode *tmp = first;
+	while(currIndx < ind-1){
+		tmp = tmp->next;
+		currIndx++;
+	}
+	DNode *tmp2 = tmp->next;
+	tmp->next =
+
+
 }
 
 
