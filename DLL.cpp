@@ -255,9 +255,10 @@ void DLL::reverse(){
 void DLL:: removeX(int x, int *ind){
 	DNode *tmp = first;
 	int count = 0;
+	*ind = -1;
 	for(int i = 0; i<=size;i++){
 		if(tmp == NULL){
-			*ind = -1;
+			cout << "test f" << endl;
 			return;
 		}
 		if(tmp->data == x){
@@ -272,6 +273,7 @@ void DLL:: removeX(int x, int *ind){
 			}
 			else if(count == size - 1){
 				pop();
+				return;
 			}
 			else{
 				DNode *tmp2  = tmp->prev;
@@ -287,6 +289,7 @@ void DLL:: removeX(int x, int *ind){
 		}
 		tmp = tmp->next;
 		count++;
+		cout << count << endl;
 	}
 }
 
