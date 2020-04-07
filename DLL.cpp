@@ -167,6 +167,8 @@ int DLL::removeAtK(int ind){
 	if(ind == 0){
 		if(size == 1){
 			deletedData = tmp->data;
+			first = NULL;
+			last = NULL;
 			delete tmp;
 			return deletedData;
 		}
