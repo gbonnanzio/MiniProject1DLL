@@ -255,15 +255,35 @@ void DLL::reverse(){
 void DLL:: removeX(int x, int *ind){
 	DNode *tmp = first;
 	int count = 0;
-	for(int i = 0; i<size;i++){
-		if(tmp->data == x){
-			DNode *tmp2  = tmp->prev;
-			DNode *tmp3 = tmp->next;
-			tmp2->next = tmp3;
-			tmp3->prev = tmp2;
-			delete tmp;
-			*ind = count;
+	for(int i = 0; i<=size;i++){
+		if(tmp == NULL){
+			*ind = -1;
 			return;
+		}
+		if(tmp->data == x){
+			if(count == 0){
+				DNode *tmp2 = first->next;
+				delete first;
+				first = tmp2;
+				first->prev = NULL;
+				size--;
+				*ind = count;
+				return;
+			}
+			else if(count == size - 1){
+				pop();
+			}
+			else{
+				DNode *tmp2  = tmp->prev;
+				DNode *tmp3 = tmp->next;
+				tmp2->next = tmp3;
+				tmp3->prev = tmp2;
+				delete tmp;
+				*ind = count;
+				size--;
+				return;
+			}
+
 		}
 		tmp = tmp->next;
 		count++;
