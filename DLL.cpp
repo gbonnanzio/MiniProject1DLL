@@ -138,7 +138,7 @@ void DLL::insertAt(int ind,int x){
 	//tmp2 is the node after the insert
 	DNode *tmp2 = tmp->next;
 	//node to insert
-	DNode *newNode = new DNode(x);
+	DNode *newNode = new DNode(x); //new node
 	tmp->next = newNode;
 	newNode->next = tmp2;
 	newNode->prev = tmp;
