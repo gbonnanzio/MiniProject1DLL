@@ -103,15 +103,18 @@ void DLL::addFirst(int x){
 }
 
 void DLL::addAtFront(int x){
-
+	DNode *tmp = new DNode(x);
+	first->prev = tmp;
+	tmp->next = first;
+	tmp->prev = NULL;
+	first = tmp;
+	size++;
 }
 
 
 
 
 
-
-//aahhhhhhpple
 
 
 
