@@ -278,6 +278,7 @@ void DLL:: removeX(int x, int *ind){
 			}
 			else if(count == size - 1){
 				pop();
+				cout << count << endl;
 				*ind = count;
 				return;
 			}
