@@ -69,21 +69,12 @@ DLL::DLL(int x){  // constructor, initializes a list with one new node with data
 
 
 void DLL::push(int x){
-	if(first == NULL){
-		first = new DNode(x);
-		last = first;
-		first->prev = NULL;
-		size++;
-	}
-	else{
 		DNode *tmp = new DNode(x);
 		last -> next = tmp;
 		tmp -> prev = last;
 		tmp -> next = NULL;
 		last = tmp;
 		size++;
-	}
-//
 }
 
 int DLL::pop(){
@@ -97,9 +88,9 @@ int DLL::pop(){
 }
 
 void DLL::addFirst(int x){
-	first = new DNode(x);
+	DNode *tmp = new DNode(x);
+	first = tmp;
 	last = first;
-	first->prev = NULL;
 	size++;
 }
 
