@@ -264,7 +264,6 @@ void DLL:: removeX(int x, int *ind){
 	for(int i = 0; i<=size;i++){
 		if(tmp == NULL){
 			cout << count << endl;
-
 			return;
 		}
 		if(tmp->data == x){
@@ -279,6 +278,7 @@ void DLL:: removeX(int x, int *ind){
 			}
 			else if(count == size - 1){
 				pop();
+				*ind = count;
 				return;
 			}
 			else{
