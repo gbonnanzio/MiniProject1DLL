@@ -102,14 +102,16 @@ void DLL::addFirst(int x){
 	size++;
 }
 
+void DLL::addAtFront(int x){
+
+}
 
 
 
 
 
 
-
-//aahhhhhh
+//aahhhhhhpple
 
 
 
