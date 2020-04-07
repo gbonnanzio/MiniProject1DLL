@@ -135,15 +135,42 @@ void DLL::addAtFront(int x){
 
 void DLL::insertAt(int ind,int x){
 	int currIndx = 0;
+	//tmp will be the node before where we are inserting
 	DNode *tmp = first;
 	while(currIndx < ind-1){
 		tmp = tmp->next;
 		currIndx++;
 	}
+	//tmp2 is the node after the insert
 	DNode *tmp2 = tmp->next;
-	tmp->next =
+	//node to insert
+	DNode *newNode = new DNode(x);
+	tmp->next = newNode;
+	newNode->next = tmp2;
+	newNode->prev = tmp;
+	tmp2->prev = newNode;
+	size++;
+}
 
+int DLL::removeAtK(int ind){
+	int currIndx = 0;
+	//tmp will be the node before where we are inserting
+	DNode *tmp = first;
+	while(currIndx < ind-1){
+		tmp = tmp->next;
+		currIndx++;
+	}
+	//tmp2 is the node to be removed
+	DNode *tmp2 = tmp->next;
+	int deletedData = tmp2->data;
+	//tmp3 is the node after the one removed
+	DNode *tmp3 = tmp2->next;
+	tmp->next = tmp3;
+	tmp3->prev = tmp;
+	delete tmp2;
+	size--;
 
+	return deletedData;
 }
 
 
