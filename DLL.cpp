@@ -69,22 +69,23 @@ DLL::DLL(int x){  // constructor, initializes a list with one new node with data
 
 
 void DLL::push(int x){
-		DNode *tmp = new DNode(x);
-		last -> next = tmp;
-		tmp -> prev = last;
-		tmp -> next = NULL;
-		last = tmp;
-		size++;
+	DNode *tmp = new DNode(x);
+	last -> next = tmp;
+	tmp->prev = last;
+	last = tmp;
+	size++;
 }
 
 int DLL::pop(){
-	DNode *tmp = last;
-	int x = tmp -> data;
+
+	DNode *temp = last;
+	int x = temp->data;
 	last = last->prev;
-	delete tmp;
+	delete temp;
 	last->next = NULL;
 	size--;
 	return x;
+
 }
 
 void DLL::addFirst(int x){
@@ -99,7 +100,6 @@ void DLL::addAtFront(int x){
 	first->prev = tmp;
 	tmp->next = first;
 	first = tmp;
-	size++;
 }
 
 
@@ -174,19 +174,29 @@ int DLL::removeAtK(int ind){
 /* write reverse here */
 
 void DLL::reverse(){
+	//tmp will be the current node
 	DNode *tmp = first;
 	//tmp2 will always be the original one after tmp
-	DNode *tmp2 = first->next;
-	while(tmp->next != NULL){
-
+	// and will be what you're editing
+	first = last;
+	last = tmp;
+	int count = 1;
+	DNode *tmp2 = tmp->next;
+	//for the last
+	tmp->prev = tmp2;
+	tmp->next = NULL;
+	tmp = tmp2;
+	tmp2 = tmp2->next;
+	while(count < size-1){
+		tmp->next = tmp->prev;
+		tmp->prev = tmp2;
+		tmp = tmp2;
+		tmp2 = tmp2->next;
+		count++;
 	}
+	tmp->next = tmp->prev;
+	tmp->prev = NULL;
 }
-
-
-
-
-
-
 
 
 
@@ -262,7 +272,6 @@ void DLL::skip(bool flag, int ct, DNode *tmp){
 		return;
 	}
 }
-
 
 /***************************************************************************************************/
 /*End of your part																														*/
