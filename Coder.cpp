@@ -91,7 +91,9 @@ Coder::Coder() {
 	codelist.printList();
 	codelist.removeAtK(1);
 	codelist.printList();
+	cout << "test 9" << endl;
 	codelist.removeAtK(0);
+	cout << "test 10" << endl;
 	codelist.printList();
 	/******************************/
 	cout <<endl<< "PART 2 Secret Code: " << endl;

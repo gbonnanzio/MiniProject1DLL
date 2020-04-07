@@ -165,6 +165,11 @@ int DLL::removeAtK(int ind){
 	//tmp will be the node before where we are inserting
 	DNode *tmp = first;
 	if(ind == 0){
+		if(size == 1){
+			deletedData = tmp->data;
+			delete tmp;
+			return deletedData;
+		}
 		DNode *tmp2 = first->next;
 		deletedData = first->data;
 		delete first;
