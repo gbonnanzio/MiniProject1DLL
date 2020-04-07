@@ -313,32 +313,55 @@ void DLL:: removeX(int x, int *ind){
 void DLL::skip(bool flag, int ct, DNode *tmp){
 	if(flag == true){
 			if(ct%2 == 0){
-				DNode *tmp2  = tmp->prev;
-				DNode *tmp3 = tmp->next;
-				tmp2->next = tmp3;
-				tmp3->prev = tmp2;
-				delete tmp;
-				ct++;
-				skip(true,ct,tmp);
+				if(ct == 0){
+					cout << "test m" << endl;
+					DNode *tmp2 = first->next;
+					delete first;
+					first = tmp2;
+					first->prev = NULL;
+					size--;
+					ct++;
+					skip(true,ct,tmp->next);
+				}
+				else if(ct == size -1){
+					pop();
+					return;
+				}
+				else{
+					DNode *tmp2  = tmp->prev;
+					DNode *tmp3 = tmp->next;
+					DNode *tmp4 = tmp;
+					tmp2->next = tmp3;
+					tmp3->prev = tmp2;
+					size--;
+					ct++;
+					skip(true,ct,tmp4->next);
+				}
+
 			}
 			else{
 				ct++;
-				skip(true,ct,tmp);
+				skip(true,ct,tmp->next);
 			}
 	}
-	if(flag == false){
+	else{
 				if(ct%2 == 1){
 					DNode *tmp2  = tmp->prev;
 					DNode *tmp3 = tmp->next;
+					DNode *tmp4 = tmp;
 					tmp2->next = tmp3;
 					tmp3->prev = tmp2;
-					delete tmp;
+					size--;
 					ct++;
-					skip(false,ct,tmp);
+					skip(false,ct,tmp4->next);
+				}
+				else if(ct == size -1){
+					pop();
+					return;
 				}
 				else{
 					ct++;
-					skip(false,ct,tmp);
+					skip(false,ct,tmp->next);
 				}
 	}
 	if(tmp == NULL){
