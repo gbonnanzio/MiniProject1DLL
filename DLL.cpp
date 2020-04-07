@@ -69,22 +69,23 @@ DLL::DLL(int x){  // constructor, initializes a list with one new node with data
 
 
 void DLL::push(int x){
-		DNode *tmp = new DNode(x);
-		last -> next = tmp;
-		tmp -> prev = last;
-		tmp -> next = NULL;
-		last = tmp;
-		size++;
+	DNode *tmp = new DNode(x);
+	last -> next = tmp;
+	tmp->prev = last;
+	last = tmp;
+	size++;
 }
 
 int DLL::pop(){
-	DNode *tmp = last;
-	int x = tmp -> data;
+
+	DNode *temp = last;
+	int x = temp->data;
 	last = last->prev;
-	delete tmp;
+	delete temp;
 	last->next = NULL;
 	size--;
 	return x;
+
 }
 
 void DLL::addFirst(int x){
@@ -95,7 +96,10 @@ void DLL::addFirst(int x){
 }
 
 void DLL::addAtFront(int x){
-
+	DNode *tmp = new DNode(x);
+	first->prev = tmp;
+	tmp->next = first;
+	first = tmp;
 }
 
 
@@ -173,19 +177,6 @@ int DLL::removeAtK(int ind){
 /****************************************************************************************/
 /* write reverse here */
 
-void DLL::reverse(){
-	DNode *tmp = first;
-	//tmp2 will always be the original one after tmp
-	DNode *tmp2 = first->next;
-	while(tmp->next != NULL){
-
-	}
-}
-
-
-
-
-
 
 
 
@@ -204,7 +195,6 @@ void DLL::reverse(){
 /* Part 5                                                                                                                     */
 /****************************************************************************************/
 /* write skip here */
-
 
 
 

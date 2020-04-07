@@ -19,7 +19,9 @@ Coder::Coder() {
 //     I've given you the test cases.  You should get the output I've given you for part 1.
 //		When you get those methods working, running this will decode the secret code 1
 	int arr[7] = {15,4,13,6,20,8,13};
+	cout<<"Test 1"<<endl;
 	makeList(arr,7);
+	cout<<"Test 2"<<endl;
 	codelist.printList();
 	codelist.printCode();
 
@@ -77,9 +79,9 @@ Coder::Coder() {
 //////		this and decode the second secret code
 	cout << "Part 2 Testing:" << endl;
 	codelist.addFirst(0);
-	cout<<"test 1"<<endl;
+	cout<<"test 3"<<endl;
 	codelist.printList();
-	cout<<"test 2"<<endl;
+	cout<<"test 4"<<endl;
 	codelist.insertAt(1,1);
 	codelist.printList();
 	codelist.insertAt(2,3);
