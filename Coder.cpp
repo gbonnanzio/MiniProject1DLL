@@ -123,7 +123,7 @@ Coder::Coder() {
 	codelist.printList();
 
 	codelist.insertAt(0,20);
-	cout<< "sixth test"<<endl;
+	cout<< "sixth test"<<endl; //
 	codelist.printList();
 
 	for (int i = 19; i >= 1; i-=2) {
