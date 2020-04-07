@@ -258,7 +258,7 @@ void DLL:: removeX(int x, int *ind){
 	*ind = -1;
 	for(int i = 0; i<=size;i++){
 		if(tmp == NULL){
-			cout << "test f" << endl;
+			cout << count << endl;
 			return;
 		}
 		if(tmp->data == x){
@@ -281,6 +281,7 @@ void DLL:: removeX(int x, int *ind){
 				tmp2->next = tmp3;
 				tmp3->prev = tmp2;
 				delete tmp;
+				cout << count << endl;
 				*ind = count;
 				size--;
 				return;
@@ -289,7 +290,6 @@ void DLL:: removeX(int x, int *ind){
 		}
 		tmp = tmp->next;
 		count++;
-		cout << count << endl;
 	}
 }
 
