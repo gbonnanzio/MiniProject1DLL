@@ -170,12 +170,11 @@ int DLL::removeAtK(int ind){
 		delete first;
 		first = tmp2;
 		first->prev = NULL;
+		size--;
 
 	}
-	else if(ind == size - 2){
-		cout << "test 6" << endl;
+	else if(ind == size - 1){
 		deletedData = pop();
-		return deletedData;
 	}
 	else{
 		while(currIndx < ind-1){
