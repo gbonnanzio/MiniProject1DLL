@@ -299,7 +299,7 @@ void DLL::skip(bool flag, int ct, DNode *tmp){
 					ct++;
 					skip(true,ct,tmp->next);
 				}
-				else if(ct - 1 == size){
+				else if(ct == size){
 						if(ct%2 == 0){
 							cout << ct << endl;
 							cout << "test n" << endl;
