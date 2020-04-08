@@ -286,74 +286,67 @@ void DLL:: removeX(int x, int *ind){
 /****************************************************************************************/
 /* write skip here */
 
-void DLL::skip(bool flag, int ct, DNode *tmp){
-	if(flag == true){
-			if(ct%2 == 0){
-				if(ct == 0){
-					cout << "test m" << endl;
-					DNode *tmp2 = first->next;
-					delete first;
-					first = tmp2;
-					first->prev = NULL;
-					size--;
-					ct++;
-					skip(true,ct,tmp->next);
-				}
-				else if(tmp == last){
-					cout << "test q" << endl;
-						if(ct%2 == 0){
-							cout << ct << endl;
-							cout << "test n" << endl;
-							pop();
-							return;
-						}
-						else{
-							cout << "test p" << endl;
-							return;
-						}
-				}
-				else{
-					cout << "test o" << endl;
-					cout << ct << endl;
-					DNode *tmp2  = tmp->prev;
-					DNode *tmp3 = tmp->next;
-					tmp2->next = tmp3;
-					tmp3->prev = tmp2;
-					size--;
-					ct++;
-					skip(true,ct,tmp->next);
+void DLL::skip(bool flag, int ct, DNode *tmp) {
+	if (flag == true) {
+		if (tmp == last) {
+			if (ct % 2 == 0) {
+				pop();
+				return;
+			} else {
+				return;
+			}
+		} else if (ct % 2 == 0) {
+			if (ct == 0) {
+				DNode *tmp2 = first->next;
+				first = tmp2;
+				first->prev = NULL;
+				size--;
+				ct++;
+				skip(true, ct, tmp2);
+			}
+
+			else {
+				DNode *tmp2 = tmp->prev;
+				DNode *tmp3 = tmp->next;
+				tmp2->next = tmp3;
+				tmp3->prev = tmp2;
+				size--;
+				ct++;
+				skip(true, ct, tmp3);
+			}
+		}
+
+		else {
+			ct++;
+			skip(true, ct, tmp->next);
+		}
+	}
+
+	else {
+		if (tmp == last) {
+					if (ct % 2 == 1) {
+						pop();
+						return;
+					} else {
+						return;
+					}
+				} else if (ct % 2 == 1) {
+
+						DNode *tmp2 = tmp->prev;
+						DNode *tmp3 = tmp->next;
+						tmp2->next = tmp3;
+						tmp3->prev = tmp2;
+						size--;
+						ct++;
+						skip(false, ct, tmp3);
+
 				}
 
-			}
-			else{
-				ct++;
-				cout << ct << endl;
-				skip(true,ct,tmp->next);
-			}
-	}
-	else{
-				if(ct%2 == 1){
-					DNode *tmp2  = tmp->prev;
-					DNode *tmp3 = tmp->next;
-					DNode *tmp4 = tmp;
-					tmp2->next = tmp3;
-					tmp3->prev = tmp2;
-					size--;
+				else {
 					ct++;
-					skip(false,ct,tmp4->next);
+					skip(false, ct, tmp->next);
 				}
-				else if(ct == size -1){
-					pop();
-					return;
-				}
-				else{
-					ct++;
-					skip(false,ct,tmp->next);
-				}
-	}
-	if(tmp == NULL){
-		return;
-	}
+			}
 }
 
 /***************************************************************************************************/
