@@ -118,30 +118,10 @@ void DLL::addAtFront(int x){
 	first = tmp;
 }
 
-
-
-
-
-
-
-
-
 /***************************************************************************************************/
 /*Part 2																																		*/
 /***************************************************************************************************/
 /* write insertAt, removeAtK  here */
-
-
-
-
-
-
-
-
-
-
-
-
 
 void DLL::insertAt(int ind,int x){
 	int currIndx = 0;
@@ -301,10 +281,6 @@ void DLL:: removeX(int x, int *ind){
 }
 
 
-
-
-
-	
 /****************************************************************************************/
 /* Part 5                                                                                                                     */
 /****************************************************************************************/
@@ -319,28 +295,38 @@ void DLL::skip(bool flag, int ct, DNode *tmp){
 					delete first;
 					first = tmp2;
 					first->prev = NULL;
-					size--;
+
 					ct++;
 					skip(true,ct,tmp->next);
 				}
-				else if(ct == size -1){
-					pop();
-					return;
+				else if(ct - 1 == size){
+						if(ct%2 == 0){
+							cout << ct << endl;
+							cout << "test n" << endl;
+							pop();
+							return;
+						}
+						else{
+							cout << "test p" << endl;
+							return;
+						}
 				}
 				else{
+					cout << "test o" << endl;
+					cout << ct << endl;
 					DNode *tmp2  = tmp->prev;
 					DNode *tmp3 = tmp->next;
-					DNode *tmp4 = tmp;
 					tmp2->next = tmp3;
 					tmp3->prev = tmp2;
-					size--;
+
 					ct++;
-					skip(true,ct,tmp4->next);
+					skip(true,ct,tmp->next);
 				}
 
 			}
 			else{
 				ct++;
+				cout << ct << endl;
 				skip(true,ct,tmp->next);
 			}
 	}
