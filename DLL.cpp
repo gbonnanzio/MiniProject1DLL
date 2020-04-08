@@ -295,11 +295,12 @@ void DLL::skip(bool flag, int ct, DNode *tmp){
 					delete first;
 					first = tmp2;
 					first->prev = NULL;
-
+					size--;
 					ct++;
 					skip(true,ct,tmp->next);
 				}
-				else if(ct == size){
+				else if(tmp == last){
+					cout << "test q" << endl;
 						if(ct%2 == 0){
 							cout << ct << endl;
 							cout << "test n" << endl;
@@ -318,7 +319,7 @@ void DLL::skip(bool flag, int ct, DNode *tmp){
 					DNode *tmp3 = tmp->next;
 					tmp2->next = tmp3;
 					tmp3->prev = tmp2;
-
+					size--;
 					ct++;
 					skip(true,ct,tmp->next);
 				}
