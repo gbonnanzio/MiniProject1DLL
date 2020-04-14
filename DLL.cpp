@@ -2,7 +2,7 @@
  * DLL.cpp
  *
  *  Created on: Apr 2, 2020
- *      Author: 13027
+ *      Geoffrey B. and Nick S.
  */
 //Part 1:(20 pts) (addFirst (3pts) ,addAtFront(4 pts),push (4 pts),pop(4 pts)) + getting secret message:5 pts
 //In the DLL.cpp class, get push, pop, and addFirst and addAtFront working for a doubly linked list as specified in DLL.hpp and DLL.cpp.

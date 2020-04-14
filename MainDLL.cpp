@@ -2,7 +2,7 @@
  * MainDLL.cpp
  *
  *  Created on: Apr 2, 2020
- *      Author: 13027
+ *      Geoffrey B. and Nick S.
  */
 
 

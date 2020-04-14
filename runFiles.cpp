@@ -2,7 +2,7 @@
  * runFiles.cpp
  *
  *  Created on: Apr 6, 2020
- *      Author: gbonn
+ *      Geoffrey B. and Nick S.
  */
 
 //void DLL::reverse(){
